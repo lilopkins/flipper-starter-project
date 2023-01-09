@@ -35,7 +35,7 @@ jobs:
           name: flipper-application-package
           path: flipper/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
           if-no-files-found: error
-      - name: Create release
+      - name: Create release if a semver tag is pushed
         if: ${{ github.ref.type == 'tag' }}
         uses: marvinpinto/action-automatic-releases@latest
         with:
