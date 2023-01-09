@@ -5,6 +5,8 @@ env:
 
 on:
   push:
+    tags:
+      - "v**"
     branches:
       - main
     pull_request:
@@ -33,4 +35,11 @@ jobs:
           name: flipper-application-package
           path: flipper/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
           if-no-files-found: error
+      - name: Create release
+        if: ${{ github.ref.type == 'tag' }}
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            flipper/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
 
