@@ -25,7 +25,7 @@ jobs:
       - name: Build FAPs
         run: |
           pushd flipper
-          ./fbt fap_dist && echo "::notice::Build successfully" || { echo "::error::Failed to build FAP." ; exit 1 }
+          ./fbt fap_dist
           popd
       - name: Upload FAP artifact
         uses: actions/upload-artifact@v3
