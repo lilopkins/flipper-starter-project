@@ -1,7 +1,7 @@
 name: Build Flipper Application Package
 
 env:
-  APP_ID: hpkns_hello
+  APP_ID: hello_world
 
 on:
   push:
@@ -35,11 +35,4 @@ jobs:
           name: flipper-application-package
           path: flipper/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
           if-no-files-found: error
-      - name: Create release if a semver tag is pushed
-        if: ${{ github.ref_type == 'tag' }}
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
-            flipper/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
 

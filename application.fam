@@ -1,6 +1,6 @@
 App(
-    appid="hpkns_hello",
-    name="Hello!",
+    appid="hello_world",
+    name="Hello World",
     apptype=FlipperAppType.PLUGIN,
     entry_point="hello_app",
     requires=["gui"],
