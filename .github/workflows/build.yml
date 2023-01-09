@@ -31,5 +31,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flipper-application-package
-          path: flipperzero-firmware/dist/f7-D/apps/apps/*/${APP_ID}.fap
+          path: flipperzero-firmware/dist/f7-D/apps/apps/*/${{ env.APP_ID }}.fap
+          if-no-file-found: error
 
