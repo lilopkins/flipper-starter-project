@@ -28,6 +28,7 @@ jobs:
           ./fbt fap_dist && echo "::notice::Build successfully" || echo "::error::Failed to build FAP."
           popd
       - name: Upload FAP artifact
+        uses: actions/upload-artifact@v3
         with:
           name: flipper-application-package
           path: flipperzero-firmware/dist/f7-D/apps/apps/*/${APP_ID}.fap
