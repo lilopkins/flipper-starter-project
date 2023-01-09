@@ -25,8 +25,6 @@ jobs:
       - name: Build FAPs
         run: |
           pushd flipper
-          ls -al applications_user
-          ls -al applications_user/$APP_ID
           ./fbt fap_dist
           popd
       - name: Upload FAP artifact
