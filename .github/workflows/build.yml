@@ -21,7 +21,7 @@ jobs:
       - name: Checkout application repository
         uses: actions/checkout@v3
         with:
-          path: flipper/applications_user/$APP_ID
+          path: flipper/applications_user/${{ env.APP_ID }}
       - name: Build FAPs
         run: |
           pushd flipper
