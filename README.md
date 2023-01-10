@@ -12,18 +12,17 @@ This project serves two purposes:
 To build locally:
 
 ```sh
-$ make
+make
 ```
 
-Your `fap` (Flipper Application Package) can be found in `build/dist/f7-D/apps/apps/<category>/<appid>.fap`.
+Your `fap` (Flipper Application Package) can be found in `build/<appid>.fap`.
 
 To clean the build folder, you can also:
 
 ```sh
-$ make clean
+make clean
 ```
 
 ## Building as a GitHub Action
 
 This repository also contains a GitHub workflow to build the `fap` on push to the `main` branch and on pull request. The compiled `fap` file is made available as an artifact of the build workflow.
-
