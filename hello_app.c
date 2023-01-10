@@ -33,10 +33,10 @@ int32_t hello_app(void* p) {
     while (running) {
         if (furi_message_queue_get(event_queue, &event, 100) == FuriStatusOk) {
             if (event.type == InputTypePress && event.key == InputKeyBack) {
-		running = false;
-	    }
-	}
-	view_port_update(view_port);
+                running = false;
+            }
+        }
+        view_port_update(view_port);
     }
 
     // Close GUI
